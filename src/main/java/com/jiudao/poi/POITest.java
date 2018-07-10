@@ -13,31 +13,31 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 public class POITest {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 		POITest poiTest = new POITest();
 		poiTest.generateXlsFile();
 	}
 	
-	// Ê¹ÓÃPOIÉú³ÉxlsÎÄ¼ş
+	// ä½¿ç”¨POIç”Ÿæˆxlsæ–‡ä»¶
 	public void generateXlsFile() {
-		// µ¥Ôª¸ñ×Ö¶ÎÃû
+		// å•å…ƒæ ¼å­—æ®µå
 		List<String> cellFields = new ArrayList<String>();
-		cellFields.add("ĞÕÃû");
-		cellFields.add("ÄêÁä");
-		cellFields.add("ĞÔ±ğ");
-		cellFields.add("ĞÕÃû");
-		cellFields.add("ÄêÁä");
-		cellFields.add("ĞÔ±ğ");
+		cellFields.add("å§“å");
+		cellFields.add("å¹´é¾„");
+		cellFields.add("æ€§åˆ«");
+		cellFields.add("å§“å");
+		cellFields.add("å¹´é¾„");
+		cellFields.add("æ€§åˆ«");
 		
-		// µÚÒ»²½´´½¨workbook
+		// ç¬¬ä¸€æ­¥åˆ›å»ºworkbook
 		HSSFWorkbook workbook = new HSSFWorkbook();
 		HSSFCellStyle style = workbook.createCellStyle();
-		// µÚ¶ş²½´´½¨sheet
+		// ç¬¬äºŒæ­¥åˆ›å»ºsheet
 		HSSFSheet hssfSheet = workbook.createSheet("sheet");
-		// µÚÈı²½´´½¨ĞĞrow: Ìí¼Ó±íÍ·0ĞĞ
+		// ç¬¬ä¸‰æ­¥åˆ›å»ºè¡Œrow: æ·»åŠ è¡¨å¤´0è¡Œ
 		HSSFRow row = hssfSheet.createRow(0);
 		
-		// µÚËÄ²½´´½¨µ¥Ôª¸ñ
+		// ç¬¬å››æ­¥åˆ›å»ºå•å…ƒæ ¼
 		HSSFCell cell = row.createCell(0);
 		
 		for (int i = 0; i < cellFields.size(); i++) {
@@ -47,17 +47,17 @@ public class POITest {
 		}
 		
 		
-		// µÚÎå²½²åÈëÊı¾İ
+		// ç¬¬äº”æ­¥æ’å…¥æ•°æ®
 		for (int i = 0; i < 100; i++) {
-			// ´´½¨ĞĞ
+			// åˆ›å»ºè¡Œ
 			row = hssfSheet.createRow(i+1);
-			// ´´½¨µ¥Ôª¸ñ²¢Ìí¼ÓÊı¾İ
+			// åˆ›å»ºå•å…ƒæ ¼å¹¶æ·»åŠ æ•°æ®
 			for (int j = 0; j < cellFields.size(); j++) {
 				row.createCell(j).setCellValue(cellFields.get(j) + j);
 			}
 		}
 		
-		// ½«Éú³ÉµÄ xls ÎÄ¼ş±£´æµ½Ö¸¶¨Â·¾¶ÏÂ
+		// å°†ç”Ÿæˆçš„ xls æ–‡ä»¶ä¿å­˜åˆ°æŒ‡å®šè·¯å¾„ä¸‹
 		String filePath = "C:\\Users\\12459\\Desktop\\test.xls";
 		try {
 			FileOutputStream fileOutputStream = new FileOutputStream(filePath);
@@ -70,6 +70,6 @@ public class POITest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-		System.out.println("xls ÎÄ¼şÉú³É³É¹¦!");
+		System.out.println("xls æ–‡ä»¶ç”ŸæˆæˆåŠŸ!");
 	}
 }
